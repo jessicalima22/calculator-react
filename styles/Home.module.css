@@ -45,10 +45,10 @@
   flex-wrap: wrap;
 }
 
-.parenthesis{
-  background-color: red;
-  width: 5rem;
-  border: 0;
+.buttons{
+ display: flex;
+ align-items: center;
+ justify-content: center;
   
 }
 
