@@ -42,14 +42,12 @@
 .conteinerDown{
   border: 1px solid blue;
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
 }
 
 .buttons{
- display: flex;
- align-items: center;
- justify-content: center;
-  
+  border: 1px solid yellow;
 }
 
 
