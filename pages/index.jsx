@@ -3,8 +3,12 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { useState } from 'react'
 import Parenthesis from '../Component/Parenthesis'
+import Numbers from '../Component/Numbers'
 
 export default function Home() {
+  
+  
+
   return (
     <div className={styles.background}>
       <div className={styles.containerUp}>
@@ -17,8 +21,12 @@ export default function Home() {
         <Parenthesis className={styles.parenthesis} signal= "("/>
         <Parenthesis className={styles.parenthesis} signal= ")"/>
         <div className={styles.buttons}>
-          <div className={styles.numbers}></div>
-          <div className={styles.operations}></div>
+          <div className={styles.numbers}>
+            <Numbers/>
+          </div>
+          <div className={styles.operations}>
+
+          </div>
         </div>
 
 
