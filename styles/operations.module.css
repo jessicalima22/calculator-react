@@ -1,0 +1,15 @@
+.operations{
+    border: 1px solid #fa2f51;
+    font-size: 1.5rem;
+    background-color: #febd72;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.2rem;
+    width: 2.6rem;
+    height: 2.6rem;
+    
+    
+    
+}
