@@ -18,4 +18,15 @@ body {
   box-sizing: border-box;
 }
 
+.doubleButtonIncrease {
+ border-radius: 20px !important;
+ height: 100px !important;
+}
 
+.doubleButtonEqual:last-child{
+  background-color: #fe7aa5 !important;
+  width: 7rem !important;
+  float: left;
+  
+  
+}
