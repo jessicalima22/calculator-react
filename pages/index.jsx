@@ -25,7 +25,9 @@ export default function Home() {
           <Numbers />
         </div>
         <div className={styles.conteinerOperations}>
-          <Operations />
+          <Operations>
+            <div> = </div>
+          </Operations>
         </div>
       </div>
     </div>
