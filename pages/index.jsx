@@ -26,7 +26,7 @@ export default function Home() {
         </div>
         <div className={styles.conteinerOperations}>
           <Operations>
-            <div> = </div>
+            <div className={styles.novo}> = </div>
           </Operations>
         </div>
       </div>
