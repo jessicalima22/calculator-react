@@ -1,5 +1,4 @@
 
-html,
 body {
   padding: 0;
   margin: 0;
@@ -8,9 +7,8 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background-color: red;
+  background: linear-gradient(45deg, #fe606e, #ffc271);
   font-family: 'Public Sans', sans-serif;
-  
 }
 
 
@@ -23,10 +21,3 @@ body {
  height: 100px !important;
 }
 
-.doubleButtonEqual:last-child{
-  background-color: #fe7aa5 !important;
-  width: 7rem !important;
-  float: left;
-  
-  
-}

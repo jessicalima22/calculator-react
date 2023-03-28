@@ -1,7 +1,7 @@
 .operations{
-    border: 1px solid #fa2f51;
+    
     font-size: 1.5rem;
-    background-color: #febd72;
+    background:linear-gradient(-30deg, #fe606e 30%, #feaa71, #fbbf70);
     border-radius: 50%;
     display: flex;
     justify-content: center;

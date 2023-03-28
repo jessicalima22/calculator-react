@@ -1,7 +1,7 @@
 import { useEffect } from 'react'
 import styles from '../styles/operations.module.css'
 
-const operations = ["-", "+", " ", "/", "x", "%", "="]
+const operations = ["-", "+", "/", "x", "%"]
 
     const generateOperations = ()=>{
         return(
@@ -14,14 +14,12 @@ const operations = ["-", "+", " ", "/", "x", "%", "="]
     
 
 
-export default function Operations (){
+export default function Operations (props){
     
     useEffect(()=> {
         const increase=document.getElementById("1")
         increase.classList.add("doubleButtonIncrease")
 
-        const equal=document.getElementById("6")
-        equal.classList.add("doubleButtonEqual")
 
     });
         
@@ -29,7 +27,8 @@ export default function Operations (){
     return (
         <>
          {generateOperations()}
+            {props.children}
         </>
-    )    
+    )     
 }
 

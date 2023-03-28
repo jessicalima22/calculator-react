@@ -24,10 +24,11 @@ export default function Home() {
         <div className={styles.conteinerNumbers}>
           <Numbers />
         </div>
-        <div className={styles.conteinerOperations}>
-          <Operations>
-            <div className={styles.novo}> = </div>
-          </Operations>
+        <div className={styles.conteinerOperationsFirst}>
+          <div className={styles.conteinerOperationsSecond}>
+            <Operations /> 
+          </div>
+          <div className={styles.equalSign}> = </div>
         </div>
       </div>
     </div>
