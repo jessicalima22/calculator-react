@@ -5,7 +5,7 @@ export default function Numbers (props){
     const generateNumbers = ()=>{
         return(
             <>
-            {numbers.map(e=><div className={styles.numbers}> {e} </div>)}
+            {numbers.map((e,i)=><div className={styles.numbers} key={i+"n"}> {e} </div>)}
            </>
         )
     }

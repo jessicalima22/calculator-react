@@ -23,20 +23,9 @@
 }
 
 
-.h1{
-  font-size: 4.5rem;
-  letter-spacing: 0.6rem;
-  margin: 0;
-  padding-right: 0.2rem;
-}
 
-.h2{
-  margin: 0;
-  padding-right: 1rem;
-  font-size: 1.6rem;
-  letter-spacing: 0.12rem;
-  margin-top: 1rem;
-}
+
+
 
 .conteinerDown{
   display: flex;

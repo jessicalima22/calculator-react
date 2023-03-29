@@ -2,18 +2,26 @@ import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useState } from "react";
-import Parenthesis from "../Component/Parenthesis";
-import Numbers from "../Component/Numbers";
-import Operations from "../Component/Operations";
+import Parenthesis from "../Components/Parenthesis";
+import Numbers from "../Components/Numbers";
+import Operations from "../Components/Operations";
+import Result from "../Components/Result";
+import View from "../Components/View";
 
 export default function Home() {
+
+  const [view, setView]=useState("1000/400")
+
+  
+
+
   return (
     <div className={styles.background}>
       <div className={styles.containerUp}>
-        <h1 className={styles.h1}>411.75</h1>
-        <h2 className={styles.h2}>1000/400</h2>
-        <h2 className={styles.h2}>2.5 + 7.25</h2>
-        <h2 className={styles.h2}>9.75 + 402</h2>
+        <Result/>
+        <View setView={setView}>{view}</View>
+        <View>2.5 + 7.25</View>
+        <View>9.75 + 402</View>
       </div>
 
       <div className={styles.conteinerDown}>
@@ -26,7 +34,7 @@ export default function Home() {
         </div>
         <div className={styles.conteinerOperationsFirst}>
           <div className={styles.conteinerOperationsSecond}>
-            <Operations /> 
+            <Operations/> 
           </div>
           <div className={styles.equalSign}> = </div>
         </div>
