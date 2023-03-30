@@ -10,8 +10,8 @@ import View from "../Components/View";
 
 export default function Home() {
 
-  const [view, setView]=useState("1000/400")
-
+  
+  const [stateOperations, setStateOperations]=useState()
   
 
 
@@ -19,7 +19,7 @@ export default function Home() {
     <div className={styles.background}>
       <div className={styles.containerUp}>
         <Result/>
-        <View setView={setView}>{view}</View>
+        <View view={stateOperations}></View>
         <View>2.5 + 7.25</View>
         <View>9.75 + 402</View>
       </div>
@@ -34,7 +34,7 @@ export default function Home() {
         </div>
         <div className={styles.conteinerOperationsFirst}>
           <div className={styles.conteinerOperationsSecond}>
-            <Operations/> 
+            <Operations stateOperations={stateOperations} setStateOperations={setStateOperations}/>
           </div>
           <div className={styles.equalSign}> = </div>
         </div>

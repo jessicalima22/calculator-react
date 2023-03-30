@@ -4,24 +4,21 @@ import styles from '../styles/operations.module.css'
 const operations = ["-", "+", "/", "x", "%"]
 
 
-
-
-
-    
-
-
-export default function Operations ({ children }){
+export default function Operations (props){
 
     const generateOperations = ()=>{
 
-        function testinho(e){
-            console.log(e.target.firstChild.wholeText)
+        function testinho(props){
+            
+            console.log(props)
           }
         
         
         return(
             <>
-            {operations.map((e,i)=><div key={i} id={i} className={styles.operations} onClick={testinho}> {e} </div>)}
+            {operations.map((e,i)=><div key={i} id={i} className={styles.operations} 
+            onClick={(e)=>props.setStateOperations(e.target.innerText)}> 
+            {e} </div>)}
             </>
         )
     }
@@ -29,6 +26,7 @@ export default function Operations ({ children }){
     useEffect(()=> {
         const increase=document.getElementById("1")
         increase.classList.add("doubleButtonIncrease")
+        
 
 
     });
@@ -37,7 +35,7 @@ export default function Operations ({ children }){
     return (
         <>
          {generateOperations()}
-            {children}
+            {props.children}
         </>
     )     
 }

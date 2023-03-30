@@ -1,9 +1,9 @@
 
 
-export default function View ({children}){
+export default function View (props){
     return(
         <>
-        <h2 className="h2">{children}</h2>
+        <h2 className="h2">{props.view}</h2>
         </>
     )
 }
