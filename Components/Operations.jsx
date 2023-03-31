@@ -11,7 +11,6 @@ export default function Operations (props){
        function typedValue (e){
             let input=e.target.innerText;
             props.setStateOperations(props.stateOperations+input)
-            console.log(props.stateOperations)
        }
         
         

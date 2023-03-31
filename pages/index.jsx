@@ -10,6 +10,11 @@ import View from "../Components/View";
 
 export default function Home() {
 
+  function typedValue (e){
+    let input=e.target.innerText;
+    setStateOperations(stateOperations+input)
+}
+
   
   const [stateOperations, setStateOperations]=useState("")
   
@@ -36,7 +41,7 @@ export default function Home() {
           <div className={styles.conteinerOperationsSecond}>
             <Operations stateOperations={stateOperations} setStateOperations={setStateOperations}/>
           </div>
-          <div className={styles.equalSign}> = </div>
+          <div className={styles.equalSign} onClick={typedValue}> = </div>
         </div>
       </div>
     </div>
