@@ -12,11 +12,11 @@ export default function Home() {
 
   function typedValue (e){
     let input=e.target.innerText;
-    setStateOperations(stateOperations+input)
+    setStateView(stateView+input)
 }
 
   
-  const [stateOperations, setStateOperations]=useState("")
+  const [stateView, setStateView]=useState("")
   
 
 
@@ -24,7 +24,7 @@ export default function Home() {
     <div className={styles.background}>
       <div className={styles.containerUp}>
         <Result/>
-        <View view={stateOperations}></View>
+        <View view={stateView}></View>
         <View>2.5 + 7.25</View>
         <View>9.75 + 402</View>
       </div>
@@ -35,11 +35,11 @@ export default function Home() {
           <Parenthesis className={styles.parenthesis} signal=")" />
         </div>
         <div className={styles.conteinerNumbers}>
-          <Numbers />
+          <Numbers stateView={stateView} setStateView={setStateView}/>
         </div>
         <div className={styles.conteinerOperationsFirst}>
           <div className={styles.conteinerOperationsSecond}>
-            <Operations stateOperations={stateOperations} setStateOperations={setStateOperations}/>
+            <Operations stateView={stateView} setStateView={setStateView}/>
           </div>
           <div className={styles.equalSign} onClick={typedValue}> = </div>
         </div>
