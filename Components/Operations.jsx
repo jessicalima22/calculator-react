@@ -5,18 +5,17 @@ const operations = ["-", "+", "/", "x", "%"]
 
 
 export default function Operations (props){
+    
+    function typedValue (e){
+        let input=e.target.value;
+        props.setStateView(props.stateView+input)
+        props.setStateOperated(false)
+   }
 
     const generateOperations = ()=>{
-
-       function typedValue (e){
-            let input=e.target.innerText;
-            props.setStateView(props.stateView+input)
-       }
-        
-        
         return(
             <>
-            {operations.map((e,i)=><div key={i} id={i} className={styles.operations} 
+            {operations.map((e,i)=><div key={i} id={i} className={styles.operations} value={e}
             onClick={typedValue}> 
             {e} </div>)}
             </>
@@ -27,7 +26,8 @@ export default function Operations (props){
         const increase=document.getElementById("1")
         increase.classList.add("doubleButtonIncrease")
         
-
+        const multiplication=document.getElementById("3")
+        multiplication.value="*"
 
     });
         

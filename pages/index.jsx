@@ -14,8 +14,9 @@ export default function Home() {
     setStateResult(eval(stateView))
 }
 
-  const [stateResult, setStateResult]=useState("411")
+  const [stateResult, setStateResult]=useState("0")
   const [stateView, setStateView]=useState("")
+  const [stateOperated, setStateOperated]=useState(true)
   
 
 
@@ -39,7 +40,7 @@ export default function Home() {
         </div>
         <div className={styles.conteinerOperationsFirst}>
           <div className={styles.conteinerOperationsSecond}>
-            <Operations stateView={stateView} setStateView={setStateView}/>
+            <Operations stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated}/>
           </div>
           <div className={styles.equalSign} onClick={typedValue}> = </div>
         </div>
