@@ -11,7 +11,7 @@ import View from "../Components/View";
 export default function Home() {
 
   
-  const [stateOperations, setStateOperations]=useState()
+  const [stateOperations, setStateOperations]=useState("")
   
 
 

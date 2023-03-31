@@ -8,16 +8,17 @@ export default function Operations (props){
 
     const generateOperations = ()=>{
 
-        function testinho(props){
-            
-            console.log(props)
-          }
+       function typedValue (e){
+            let input=e.target.innerText;
+            props.setStateOperations(props.stateOperations+input)
+            console.log(props.stateOperations)
+       }
         
         
         return(
             <>
             {operations.map((e,i)=><div key={i} id={i} className={styles.operations} 
-            onClick={(e)=>props.setStateOperations(e.target.innerText)}> 
+            onClick={typedValue}> 
             {e} </div>)}
             </>
         )

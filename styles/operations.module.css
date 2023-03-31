@@ -13,6 +13,6 @@
 }
 
 .operations:hover{
-    background-color: aqua;
+    cursor: pointer;
 }
 
