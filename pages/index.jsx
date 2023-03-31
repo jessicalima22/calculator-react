@@ -10,12 +10,11 @@ import View from "../Components/View";
 
 export default function Home() {
 
-  function typedValue (e){
-    let input=e.target.innerText;
-    setStateView(stateView+input)
+  function typedValue (){
+    setStateResult(eval(stateView))
 }
 
-  
+  const [stateResult, setStateResult]=useState("411")
   const [stateView, setStateView]=useState("")
   
 
@@ -23,7 +22,8 @@ export default function Home() {
   return (
     <div className={styles.background}>
       <div className={styles.containerUp}>
-        <Result/>
+        <Result stateResult={stateResult} setStateResult={setStateResult} 
+        stateView={stateView} setStateView={setStateView}/>
         <View view={stateView}></View>
         <View>2.5 + 7.25</View>
         <View>9.75 + 402</View>

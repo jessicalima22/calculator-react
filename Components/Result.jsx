@@ -1,8 +1,8 @@
 
-export default function Result (){
+export default function Result (props){
     return(
         <>
-        <h1 className="h1">411.75</h1>
+        <h1 className="h1">{props.stateResult}</h1>
         </>
     )
 }
