@@ -10,3 +10,8 @@
     
     
 }
+
+.numbers:hover{
+    cursor: pointer;
+    font-weight: bolder;
+}

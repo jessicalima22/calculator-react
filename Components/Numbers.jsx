@@ -6,7 +6,16 @@ export default function Numbers (props){
 
         function typedValue (e){
             let input=e.target.innerText;
+
+            if(input=="." && props.stateOperated==false){
+            
+            } else if (input=="C"){
+            props.setStateView("")
+            props.setStateOperated(false)
+            } else {
             props.setStateView(props.stateView+input)
+            props.setStateOperated(true)
+            }
        }
         
         return(

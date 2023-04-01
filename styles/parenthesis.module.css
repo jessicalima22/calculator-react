@@ -10,3 +10,7 @@
     margin-right: auto;
   }
   
+  .parenthesis:hover{
+    cursor: pointer;
+    font-weight: bolder;
+}

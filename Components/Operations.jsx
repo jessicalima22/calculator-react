@@ -1,16 +1,27 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import styles from '../styles/operations.module.css'
 
-const operations = ["-", "+", "/", "x", "%"]
+const operations = ["-", "+", "/", "*", "%"]
 
 
 export default function Operations (props){
+
+    //const [controlOperations, setControlOperations]=useState(false)
     
     function typedValue (e){
-        let input=e.target.value;
+        
+        let input=e.target.attributes.value.value;
+
+        if(input=="-" && props.stateView==""){
         props.setStateView(props.stateView+input)
-        props.setStateOperated(false)
+        
+         } else if (props.stateOperated==true) {
+            props.setStateView(props.stateView+input)
+            props.setStateOperated(false)
+        }
+        
    }
+   console.log(props.stateOperated)
 
     const generateOperations = ()=>{
         return(
@@ -27,15 +38,15 @@ export default function Operations (props){
         increase.classList.add("doubleButtonIncrease")
         
         const multiplication=document.getElementById("3")
-        multiplication.value="*"
+        multiplication.innerText="x"
 
     });
         
 
     return (
         <>
-         {generateOperations()}
-            {props.children}
+        {generateOperations()}
+        {props.children}
         </>
     )     
 }

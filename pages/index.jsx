@@ -10,14 +10,14 @@ import View from "../Components/View";
 
 export default function Home() {
 
-  function typedValue (){
+  function equal (){
     setStateResult(eval(stateView))
-    if(){}
+    
 }
 
   const [stateResult, setStateResult]=useState("0")
   const [stateView, setStateView]=useState("")
-  const [stateOperated, setStateOperated]=useState(true)
+  const [stateOperated, setStateOperated]=useState(false)
   
 
 
@@ -33,17 +33,17 @@ export default function Home() {
 
       <div className={styles.conteinerDown}>
         <div className={styles.conteinerParenthesis}>
-          <Parenthesis className={styles.parenthesis} signal="(" />
-          <Parenthesis className={styles.parenthesis} signal=")" />
+          <Parenthesis stateView={stateView} setStateView={setStateView} className={styles.parenthesis} signal="(" />
+          <Parenthesis stateView={stateView} setStateView={setStateView} className={styles.parenthesis} signal=")" />
         </div>
         <div className={styles.conteinerNumbers}>
-          <Numbers stateView={stateView} setStateView={setStateView}/>
+          <Numbers stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated}/>
         </div>
         <div className={styles.conteinerOperationsFirst}>
           <div className={styles.conteinerOperationsSecond}>
             <Operations stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated}/>
           </div>
-          <div className={styles.equalSign} onClick={typedValue}> = </div>
+          <div className={styles.equalSign} onClick={equal}> = </div>
         </div>
       </div>
     </div>

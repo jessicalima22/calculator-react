@@ -14,5 +14,6 @@
 
 .operations:hover{
     cursor: pointer;
+    font-weight: bolder;
 }
 
