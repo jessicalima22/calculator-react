@@ -12,6 +12,7 @@ export default function Home() {
 
   function typedValue (){
     setStateResult(eval(stateView))
+    if(){}
 }
 
   const [stateResult, setStateResult]=useState("0")
