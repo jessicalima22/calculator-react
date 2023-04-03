@@ -27,6 +27,8 @@ body {
   margin: 0;
   padding-right: 0.2rem;
   overflow-wrap: break-word;
+  max-width: 18rem;
+  min-height: 5.25rem;
 }
 
 .h2{
@@ -36,4 +38,5 @@ body {
   letter-spacing: 0.12rem;
   margin-top: 1rem;
   overflow-wrap: break-word;
+  max-width: 18rem;
 }

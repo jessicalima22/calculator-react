@@ -8,26 +8,27 @@ export default function Operations (props){
 
     //const [controlOperations, setControlOperations]=useState(false)
     
-    function typedValue (e){
+    function addOperation (e){
         
         let input=e.target.attributes.value.value;
 
         if(input=="-" && props.stateView==""){
-        props.setStateView(props.stateView+input)
+        props.setStateView(input)
         
-         } else if (props.stateOperated==true) {
-            props.setStateView(props.stateView+input)
-            props.setStateOperated(false)
+        } else if (props.stateOperated==true) {
+        props.setStateView(props.stateView+input)
+        props.setStateOperated(false)
+        props.setDotState("podeinserir") 
         }
         
    }
-   console.log(props.stateOperated)
+  
 
     const generateOperations = ()=>{
         return(
             <>
             {operations.map((e,i)=><div key={i} id={i} className={styles.operations} value={e}
-            onClick={typedValue}> 
+            onClick={addOperation}> 
             {e} </div>)}
             </>
         )

@@ -15,9 +15,10 @@ export default function Home() {
     
 }
 
-  const [stateResult, setStateResult]=useState("0")
-  const [stateView, setStateView]=useState("")
+  const [stateResult, setStateResult]=useState("")
+  const [stateView, setStateView]=useState(0)
   const [stateOperated, setStateOperated]=useState(false)
+  const [dotState, setDotState]=useState("podeinserir")
   
 
 
@@ -37,11 +38,11 @@ export default function Home() {
           <Parenthesis stateView={stateView} setStateView={setStateView} className={styles.parenthesis} signal=")" />
         </div>
         <div className={styles.conteinerNumbers}>
-          <Numbers stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated}/>
+          <Numbers dotState={dotState} setDotState={setDotState} stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated}/>
         </div>
         <div className={styles.conteinerOperationsFirst}>
           <div className={styles.conteinerOperationsSecond}>
-            <Operations stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated}/>
+            <Operations dotState={dotState} setDotState={setDotState} stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated}/>
           </div>
           <div className={styles.equalSign} onClick={equal}> = </div>
         </div>
