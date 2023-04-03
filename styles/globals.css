@@ -26,6 +26,7 @@ body {
   letter-spacing: 0.6rem;
   margin: 0;
   padding-right: 0.2rem;
+  overflow-wrap: break-word;
 }
 
 .h2{
@@ -34,4 +35,5 @@ body {
   font-size: 1.6rem;
   letter-spacing: 0.12rem;
   margin-top: 1rem;
+  overflow-wrap: break-word;
 }
