@@ -4,7 +4,8 @@ export default function Parenthesis (props){
   function typedValue (e){
     let input=e.target.innerText;
     let stringStateView = props.stateView.toString()
-    let lastViewDigitIsParenthesis = stringStateView.endsWith("(") || stringStateView.endsWith(")")
+    let lastViewDigitIsParenthesis = stringStateView.endsWith("(") || 
+    stringStateView.endsWith(")")
 
     switch(true){
         case(lastViewDigitIsParenthesis === true):
@@ -31,6 +32,8 @@ export default function Parenthesis (props){
           props.setStateView("ERROR!")
           break;
     }
+
+    //não pode ter só um numero, não pode ter operação imediatamente antes ou após o )
     
     
     
