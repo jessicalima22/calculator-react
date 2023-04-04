@@ -8,27 +8,30 @@ export default function Numbers (props){
       
 
         function typedValue (e){
-           let input=e.target.innerText;
+            let input=e.target.innerText;
             let stringStateView = props.stateView.toString()
-            let lastViewDigit = props.stateView.lenght
+            let lastViewDigit = stringStateView.endsWith("+") || 
+            stringStateView.endsWith("-") || 
+            stringStateView.endsWith("/") || 
+            stringStateView.endsWith("*") ||
+            stringStateView.endsWith("%")
 
             if(props.stateView===0 && input!=="."){ 
                 props.setStateView(input)
                 props.setStateOperated(true)     
             } else if (input=="C"){
-                props.setStateView("")
+                props.setStateView(0)
                 props.setStateOperated(false)
-            } else if (input==="."  && props.dotState== "nãoinserir"){
-                console.log("deu") 
-            } else if (input==="." ){
+            } else if (input==="."  && props.dotState== "unabletoinsert"){
+                return; 
+            } else if (input==="." ){ if(lastViewDigit===true){
+                return;
+                } else {
                 props.setStateView(props.stateView+input)
-                props.setDotState("nãoinserir");  
-        
+                props.setDotState("unabletoinsert")}  
             } else if (input!=="."){
                 props.setStateView(props.stateView+input)
                 props.setStateOperated(true)
-                console.log(lastViewDigit)
-                console.log("erro")
             } else {
                 console.log("cagou")
             }
@@ -36,18 +39,41 @@ export default function Numbers (props){
 
        function typedValueS (e){
         let input=e.target.innerText;
+        let stringStateView = props.stateView.toString()
+        let lastViewDigitIsOperator = stringStateView.endsWith("+") || 
+        stringStateView.endsWith("-") || 
+        stringStateView.endsWith("/") || 
+        stringStateView.endsWith("*") ||
+        stringStateView.endsWith("%")
+        let lastViewDigitIsParenthesis = stringStateView.endsWith("(") || 
+        stringStateView.endsWith(")")
+        
 
         switch (true){
-            case (input === "." && props.setStateOperated(false) && props.stateView.includes(".")):
+            case (input==="C"):
+                props.setStateView(0)
+                props.setStateOperated(false)
+                break;
+            case (props.stateView===0 && input!=="."):
+                props.setStateView(input)
+                props.setStateOperated(true)
+                break;
+            case(input==="."  && props.dotState==="unabletoinsert"):
                 return;
                 break;
-            case (input=="C"):
-                props.setStateView("");
-                props.setStateOperated(false);
+            case (input==="."):
+                if(lastViewDigitIsOperator===true || lastViewDigitIsParenthesis===true){
+                    return;
+                } else {
+                    props.setStateView(props.stateView+input)
+                    props.setDotState("unabletoinsert")}
+                break;
+            case(input!=="."):
+                props.setStateView(props.stateView+input)
+                props.setStateOperated(true)
                 break;
             default:
-                props.setStateView(props.stateView+input);
-                props.setStateOperated(true);
+                props.setStateView("error!");
                 break;
         }
    }
@@ -56,7 +82,7 @@ export default function Numbers (props){
         
         return(
             <>
-            {numbers.map((e,i)=><div className={styles.numbers} key={i+"n"} onClick={typedValue}> {e} </div>)}
+            {numbers.map((e,i)=><div className={styles.numbers} key={i+"n"} onClick={typedValueS}> {e} </div>)}
            </>
         )
     }

@@ -18,8 +18,8 @@ export default function Home() {
   const [stateResult, setStateResult]=useState("")
   const [stateView, setStateView]=useState(0)
   const [stateOperated, setStateOperated]=useState(false)
-  const [dotState, setDotState]=useState("podeinserir")
-  
+  const [dotState, setDotState]=useState("abletoinsert")
+  const [parenthesesState, setParenthesesState]=useState("unabletoinsert)")
 
 
   return (
@@ -34,15 +34,15 @@ export default function Home() {
 
       <div className={styles.conteinerDown}>
         <div className={styles.conteinerParenthesis}>
-          <Parenthesis stateView={stateView} setStateView={setStateView} className={styles.parenthesis} signal="(" />
-          <Parenthesis stateView={stateView} setStateView={setStateView} className={styles.parenthesis} signal=")" />
+          <Parenthesis parenthesesState={parenthesesState} setParenthesesState={setParenthesesState} stateView={stateView} setStateView={setStateView} className={styles.parenthesis} signal="(" />
+          <Parenthesis parenthesesState={parenthesesState} setParenthesesState={setParenthesesState} stateView={stateView} setStateView={setStateView} className={styles.parenthesis} signal=")" />
         </div>
         <div className={styles.conteinerNumbers}>
           <Numbers dotState={dotState} setDotState={setDotState} stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated}/>
         </div>
         <div className={styles.conteinerOperationsFirst}>
           <div className={styles.conteinerOperationsSecond}>
-            <Operations dotState={dotState} setDotState={setDotState} stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated}/>
+            <Operations dotState={dotState} setDotState={setDotState} stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated} stateResult={stateResult} setStateResult={setStateResult} />
           </div>
           <div className={styles.equalSign} onClick={equal}> = </div>
         </div>
