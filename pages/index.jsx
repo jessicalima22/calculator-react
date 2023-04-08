@@ -34,8 +34,8 @@ export default function Home() {
 
       <div className={styles.conteinerDown}>
         <div className={styles.conteinerParenthesis}>
-          <Parenthesis parenthesesState={parenthesesState} setParenthesesState={setParenthesesState} stateView={stateView} setStateView={setStateView} className={styles.parenthesis} signal="(" />
-          <Parenthesis parenthesesState={parenthesesState} setParenthesesState={setParenthesesState} stateView={stateView} setStateView={setStateView} className={styles.parenthesis} signal=")" />
+          <Parenthesis parenthesesState={parenthesesState} setParenthesesState={setParenthesesState} stateOperated={stateOperated} setStateOperated={setStateOperated} stateView={stateView} setStateView={setStateView} className={styles.parenthesis} signal="(" />
+          <Parenthesis parenthesesState={parenthesesState} setParenthesesState={setParenthesesState} stateOperated={stateOperated} setStateOperated={setStateOperated} stateView={stateView} setStateView={setStateView} className={styles.parenthesis} signal=")" />
         </div>
         <div className={styles.conteinerNumbers}>
           <Numbers dotState={dotState} setDotState={setDotState} stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated}/>

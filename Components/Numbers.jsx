@@ -47,7 +47,8 @@ export default function Numbers (props){
         stringStateView.endsWith("%")
         let lastViewDigitIsParenthesis = stringStateView.endsWith("(") || 
         stringStateView.endsWith(")")
-        
+        let lastViewDigitIsParenthesisClosed = stringStateView.endsWith(")")
+                
 
         switch (true){
             case (input==="C"):
@@ -58,7 +59,7 @@ export default function Numbers (props){
                 props.setStateView(input)
                 props.setStateOperated(true)
                 break;
-            case(input==="."  && props.dotState==="unabletoinsert"):
+            case(input==="." && props.dotState==="unabletoinsert"):
                 return;
                 break;
             case (input==="."):
@@ -68,12 +69,12 @@ export default function Numbers (props){
                     props.setStateView(props.stateView+input)
                     props.setDotState("unabletoinsert")}
                 break;
-            case(input!=="."):
+            case(input!=="." && lastViewDigitIsParenthesisClosed===false):
                 props.setStateView(props.stateView+input)
                 props.setStateOperated(true)
                 break;
             default:
-                props.setStateView("error!");
+                return;;
                 break;
         }
    }
