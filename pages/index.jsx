@@ -12,11 +12,15 @@ export default function Home() {
 
   function equal (){
     setStateResult(eval(stateView))
-    
+    setStateViewTwo(stateView)
+    setStateViewThree(stateViewTwo)
+    setStateView(eval(stateView))
 }
 
-  const [stateResult, setStateResult]=useState("")
+  const [stateResult, setStateResult]=useState(0)
   const [stateView, setStateView]=useState(0)
+  const [stateViewTwo, setStateViewTwo]=useState("")
+  const [stateViewThree, setStateViewThree]=useState("")
   const [stateOperated, setStateOperated]=useState(false)
   const [dotState, setDotState]=useState("abletoinsert")
   const [parenthesesState, setParenthesesState]=useState("unabletoinsert)")
@@ -28,8 +32,8 @@ export default function Home() {
         <Result stateResult={stateResult} setStateResult={setStateResult} 
         stateView={stateView} setStateView={setStateView}/>
         <View view={stateView}></View>
-        <View>2.5 + 7.25</View>
-        <View>9.75 + 402</View>
+        <View>{stateViewTwo}</View>
+        <View>{stateViewThree}</View>
       </div>
 
       <div className={styles.conteinerDown}>
@@ -38,7 +42,7 @@ export default function Home() {
           <Parenthesis parenthesesState={parenthesesState} setParenthesesState={setParenthesesState} stateOperated={stateOperated} setStateOperated={setStateOperated} stateView={stateView} setStateView={setStateView} className={styles.parenthesis} signal=")" />
         </div>
         <div className={styles.conteinerNumbers}>
-          <Numbers dotState={dotState} setDotState={setDotState} stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated}/>
+          <Numbers stateViewThree={stateViewThree} setStateViewThree={setStateViewThree} stateViewTwo={stateViewTwo} setStateViewTwo={setStateViewTwo} stateResult={stateResult} setStateResult={setStateResult} dotState={dotState} setDotState={setDotState} stateView={stateView} setStateView={setStateView} stateOperated={stateOperated} setStateOperated={setStateOperated}/>
         </div>
         <div className={styles.conteinerOperationsFirst}>
           <div className={styles.conteinerOperationsSecond}>
@@ -50,3 +54,6 @@ export default function Home() {
     </div>
   );
 }
+
+
+//limitar o tamanho do resultado e alterar o tamanho da fonte conforme o numero de digitos (width) do rescut

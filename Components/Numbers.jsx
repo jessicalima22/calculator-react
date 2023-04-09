@@ -52,8 +52,11 @@ export default function Numbers (props){
 
         switch (true){
             case (input==="C"):
-                props.setStateView(0)
+                props.setStateResult(0)
                 props.setStateOperated(false)
+                props.setStateViewTwo(props.stateView)
+                props.setStateViewThree(props.stateViewTwo)
+                props.setStateView(0)
                 break;
             case (props.stateView===0 && input!=="."):
                 props.setStateView(input)
