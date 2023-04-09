@@ -36,7 +36,7 @@ export default function Parenthesis (props){
           break;
     }
 
-    //não pode ter só um numero (mas pode ter só o menos), não pode ter operação imediatamente antes ou após o )
+    
     //(9+4)/5-(9)+6(6) verificar onde está o ultimo (, editar uma string e verificar se tem operação
     
     
