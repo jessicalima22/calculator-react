@@ -12,6 +12,7 @@ export default function Parenthesis (props){
     stringStateView.endsWith("/")
 
     switch(true){
+      
         case(lastViewDigitIsParenthesis === true):
           return;
           break;
@@ -34,12 +35,9 @@ export default function Parenthesis (props){
           return;
           break;
     }
-
-   
   }
 
-
-  return(
+  return (
       <div >
         <button className={styles.parenthesis} onClick={typedValue}>{props.signal}</button>
       </div>

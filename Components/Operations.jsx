@@ -6,25 +6,6 @@ const operations = ["-", "+", "/", "*", "%"]
 
 export default function Operations (props){
 
-    //const [controlOperations, setControlOperations]=useState(false)
-    
-    function addOperation (e){
-        
-        let input=e.target.attributes.value.value;
-        let stringStateView = props.stateView.toString()
-        let lastViewDigitIsDot = stringStateView.endsWith(".")
-
-        if (input=="-" && props.stateView===0){
-            props.setStateView(input)
-        } else if (lastViewDigitIsDot===false && props.stateOperated==true) {
-            props.setStateView(props.stateView+input)
-            props.setStateOperated(false)
-            props.setDotState("abletoinsert") 
-        } else {
-            return;
-        }
-    }
-
    function addOperationS (e){
         
     let input=e.target.attributes.value.value;
@@ -35,13 +16,16 @@ export default function Operations (props){
     let lastViewDigitIsParenthesisOpen = stringStateView.endsWith("(")
 
         switch(true){
+            case (stringStateView.length>15):
+                return;
+                break;
             case(input==="-" && props.stateView===0):
                 props.setStateView(input)
                 break;
             case(lastViewDigitIsDot===false && props.stateOperated===true && lastViewDigitIsParenthesisOpen===false):
                 if(input==="%"){
-                    props.setStateResult(props.stateView/100)
-                    props.setStateView(props.stateView/100)
+                    props.setStateResult(eval(props.stateView)/100)
+                    props.setStateView(eval(props.stateView)/100)
                 } else {props.setStateView(props.stateView+input)
                     props.setStateOperated(false)
                     props.setDotState("abletoinsert")}
