@@ -41,7 +41,7 @@ export default function Operations (props){
             case(lastViewDigitIsDot===false && props.stateOperated===true && lastViewDigitIsParenthesisOpen===false):
                 if(input==="%"){
                     props.setStateResult(props.stateView/100)
-                    props.setStateView(0)
+                    props.setStateView(props.stateView/100)
                 } else {props.setStateView(props.stateView+input)
                     props.setStateOperated(false)
                     props.setDotState("abletoinsert")}
