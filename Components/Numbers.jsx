@@ -28,12 +28,21 @@ export default function Numbers (props){
                 case (stringStateView.length>15):
                     return;
                     break;
-                case (props.dotState==="unabletoinsert" && input===0):
-                    return;
-                    break;
-                case (props.stateView===0 && input!=="."):
+                case (props.stateView==0 && input!=="." && input!=="0"):
                     props.setStateView(input)
                     props.setStateOperated(true)
+                    props.setAllowMultipleZeros("abletoinsert")
+                    console.log("aqui")
+                    break;
+                case (input==="0"):
+                    if(props.stateView===0){
+                        props.setStateView(input)
+                        props.setStateOperated(true)
+                    } else if (props.allowMultipleZeros==="abletoinsert" || lastViewDigitIsOperator===true){
+                        props.setStateView(props.stateView+input)
+                        props.setStateOperated(true)
+                        console.log("aqui certo")
+                    } 
                     break;
                 case(input==="." && props.dotState==="unabletoinsert"):
                     return;
@@ -43,14 +52,21 @@ export default function Numbers (props){
                         return;
                     } else {
                         props.setStateView(props.stateView+input)
-                        props.setDotState("unabletoinsert")}
+                        props.setDotState("unabletoinsert")
+                        props.setAllowMultipleZeros("abletoinsert")}
                     break;
-                case(input!=="." && lastViewDigitIsParenthesisClosed===false):
+                case(input!=="." && input!=="0"):
+                    if(lastViewDigitIsParenthesisClosed===false){
                     props.setStateView(props.stateView+input)
                     props.setStateOperated(true)
+                    props.setAllowMultipleZeros("abletoinsert")
+                    console.log("aquierrado")
+                    } else {
+                    return;
+                    }
                     break;
                 default:
-                    return;;
+                    return;
                     break;
             }
         }   

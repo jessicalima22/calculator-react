@@ -5,6 +5,7 @@ import Numbers from "../Components/Numbers";
 import Operations from "../Components/Operations";
 import Result from "../Components/Result";
 import View from "../Components/View";
+import ButtonDel from "../Components/Buttondel";
   
 export default function Home() {
 
@@ -15,7 +16,8 @@ export default function Home() {
   const [stateOperated, setStateOperated]=useState(false)
   const [dotState, setDotState]=useState("abletoinsert")
   const [parenthesesState, setParenthesesState]=useState("unabletoinsert)")
-  
+  const [allowMultipleZeros, setAllowMultipleZeros]=useState("unabletoinsert")
+
   let stringStateResult = stateResult.toString();
   let numberOfDigitsResult = stringStateResult.length;
 
@@ -39,7 +41,8 @@ export default function Home() {
         setStateResult(eval(stateView).toFixed(5))
         setStateViewTwo(stateView)
         setStateViewThree(stateViewTwo)
-        setStateView(eval(stateView).toFixed(5))}
+        setStateView(eval(stateView).toFixed(5))
+        console.log("eita")}
     }   
   }
 
@@ -67,12 +70,15 @@ export default function Home() {
           <Parenthesis parenthesesState={parenthesesState} setParenthesesState={setParenthesesState} 
           stateOperated={stateOperated} setStateOperated={setStateOperated} 
           stateView={stateView} setStateView={setStateView} 
-          className={styles.parenthesis} signal="(" />
+           signal="(" />
 
           <Parenthesis parenthesesState={parenthesesState} setParenthesesState={setParenthesesState} 
           stateOperated={stateOperated} setStateOperated={setStateOperated} 
           stateView={stateView} setStateView={setStateView} 
-          className={styles.parenthesis} signal=")" />
+           signal=")" />
+
+          <ButtonDel signal="Del"
+          stateView={stateView} setStateView={setStateView} />
         </div>
         <div className={styles.conteinerNumbers}>
           <Numbers stateViewThree={stateViewThree} setStateViewThree={setStateViewThree} 
@@ -80,14 +86,16 @@ export default function Home() {
           stateResult={stateResult} setStateResult={setStateResult} 
           dotState={dotState} setDotState={setDotState} 
           stateView={stateView} setStateView={setStateView} 
-          stateOperated={stateOperated} setStateOperated={setStateOperated}/>
+          stateOperated={stateOperated} setStateOperated={setStateOperated}
+          allowMultipleZeros={allowMultipleZeros} setAllowMultipleZeros={setAllowMultipleZeros}/>
         </div>
         <div className={styles.conteinerOperationsFirst}>
           <div className={styles.conteinerOperationsSecond}>
             <Operations dotState={dotState} setDotState={setDotState} 
             stateView={stateView} setStateView={setStateView} 
             stateOperated={stateOperated} setStateOperated={setStateOperated} 
-            stateResult={stateResult} setStateResult={setStateResult} />
+            stateResult={stateResult} setStateResult={setStateResult}
+            allowMultipleZeros={allowMultipleZeros} setAllowMultipleZeros={setAllowMultipleZeros} />
           </div>
           <div className={styles.equalSign} onClick={equal}> = </div>
         </div>

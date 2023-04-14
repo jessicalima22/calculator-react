@@ -28,7 +28,8 @@ export default function Operations (props){
                     props.setStateView(eval(props.stateView)/100)
                 } else {props.setStateView(props.stateView+input)
                     props.setStateOperated(false)
-                    props.setDotState("abletoinsert")}
+                    props.setDotState("abletoinsert")
+                    props.setAllowMultipleZeros("unabletoinsert")}
                 break;
             case(lastViewDigitIsParentheses===true && input!=="-"):
                 return;
@@ -37,6 +38,7 @@ export default function Operations (props){
                 props.setStateView(props.stateView+input)
                 props.setStateOperated(false)
                 props.setDotState("abletoinsert")
+                props.setAllowMultipleZeros("abletoinsert")
                 break;
             default:
                 return;
