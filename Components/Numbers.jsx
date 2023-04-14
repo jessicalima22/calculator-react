@@ -28,6 +28,9 @@ export default function Numbers (props){
                 case (stringStateView.length>15):
                     return;
                     break;
+                case (props.dotState==="unabletoinsert" && input===0):
+                    return;
+                    break;
                 case (props.stateView===0 && input!=="."):
                     props.setStateView(input)
                     props.setStateOperated(true)

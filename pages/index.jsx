@@ -36,10 +36,10 @@ export default function Home() {
         setStateViewThree(stateViewTwo)
         setStateView(eval(stateView))
       } else {
-        setStateResult(eval(stateView).toFixed(2))
+        setStateResult(eval(stateView).toFixed(5))
         setStateViewTwo(stateView)
         setStateViewThree(stateViewTwo)
-        setStateView(eval(stateView).toFixed(2))}
+        setStateView(eval(stateView).toFixed(5))}
     }   
   }
 
