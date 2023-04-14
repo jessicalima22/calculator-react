@@ -28,21 +28,28 @@ export default function Home() {
     stringStateView.endsWith("-") || 
     stringStateView.endsWith("/") || 
     stringStateView.endsWith("*")
+    setDotState("abletoinsert")
 
     if(lastViewDigitIsOperator === true){
       return;
     } else {  
-      if(Number.isInteger(eval(stateView))){
-        setStateResult(eval(stateView))
+      let stringResult = eval(stateView)
+      let lastResultDigitIsZero = stringStateView.endsWith("0")
+      if(Number.isInteger(stringResult)){
+        setStateResult(stringResult)
         setStateViewTwo(stateView)
         setStateViewThree(stateViewTwo)
         setStateView(eval(stateView))
       } else {
-        setStateResult(eval(stateView).toFixed(5))
+        let stringResult = stringResult.toFixed(10)
+
+        while (lastResultDigitIsZero=true){
+          console.log("oi")
+        }
+        setStateResult(stringResult)
         setStateViewTwo(stateView)
         setStateViewThree(stateViewTwo)
-        setStateView(eval(stateView).toFixed(5))
-        console.log("eita")}
+        setStateView(stringResult)}
     }   
   }
 
