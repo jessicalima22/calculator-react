@@ -44,7 +44,8 @@ export default function Home() {
         let stringResult = stringResult.toFixed(10)
 
         while (lastResultDigitIsZero=true){
-          console.log("oi")
+          lastResultDigitIsZero = lastResultDigitIsZero.slice(0, lastResultDigitIsZero.length - 1);
+          console.log(lastResultDigitIsZero);
         }
         setStateResult(stringResult)
         setStateViewTwo(stateView)
