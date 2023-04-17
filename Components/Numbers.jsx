@@ -55,10 +55,11 @@ export default function Numbers (props){
                         props.setAllowMultipleZeros("abletoinsert")}
                     break;
                 case(input!=="." && input!=="0"):
-                    if(props.stateView==0){
+                    if(props.stateView===0){
                         props.setStateView(input)
                         props.setStateOperated(true)
-                        props.setAllowMultipleZeros("abletoinsert");
+                        props.setAllowMultipleZeros("abletoinsert")
+                        console.log("here")
                     } else if(lastViewDigitIsParenthesisClosed===false){
                     props.setStateView(props.stateView+input)
                     props.setStateOperated(true)

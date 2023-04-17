@@ -40,6 +40,7 @@ export default function Home() {
         setStateViewTwo(stateView)
         setStateViewThree(stateViewTwo)
         setStateView(eval(stateView))
+        console.log("numberinteger")
       } else {
         let stringResult = stringResult.toFixed(10)
 
