@@ -33,25 +33,55 @@ export default function Home() {
     if(lastViewDigitIsOperator === true){
       return;
     } else {  
-      let stringResult = eval(stateView)
-      let lastResultDigitIsZero = stringStateView.endsWith("0")
-      if(Number.isInteger(stringResult)){
-        setStateResult(stringResult)
+
+      let lineResult = eval(stateView)
+      let stringResult = lineResult.toString()
+      let lastResultDigitIsZero = stringResult.endsWith("0")
+      let numberResult = ""
+      if(Number.isInteger(lineResult)){
+        setStateResult(lineResult)
         setStateViewTwo(stateView)
         setStateViewThree(stateViewTwo)
         setStateView(eval(stateView))
         console.log("numberinteger")
       } else {
-        let stringResult = stringResult.toFixed(10)
+            switch(true){
+              case(lastResultDigitIsZero=false):
+                    console.log("auqi falso")
+                    numberResult=lineResult.toFixed(10)
+                    setStateResult(numberResult)
+                    setStateViewTwo(stateView)
+                    setStateViewThree(stateViewTwo)
+                    setStateView(numberResult)
+                    break;
+              case(lastResultDigitIsZero=true):
+              console.log("auqi verdadeiro")
+              numberResult=lineResult.toFixed(3)
+              let lastResultDigitContinueZero=0
+              let i=0
+              let newResult=0
 
-        while (lastResultDigitIsZero=true){
-          lastResultDigitIsZero = lastResultDigitIsZero.slice(0, lastResultDigitIsZero.length - 1);
-          console.log(lastResultDigitIsZero);
-        }
-        setStateResult(stringResult)
-        setStateViewTwo(stateView)
-        setStateViewThree(stateViewTwo)
-        setStateView(stringResult)}
+              do {
+                newResult= newResult.toString.slice(0, newResult.length - 1)
+                console.log(newResult)
+                
+                
+                lastResultDigitContinueZero = newResult.toString().endsWith("0")
+                i++
+                console.log(i)
+                console.log(lastResultDigitContinueZero)
+
+              } while (i<3)
+
+              
+              setStateResult(newResult)
+              setStateViewTwo(stateView)
+              setStateViewThree(stateViewTwo)
+              setStateView(newResult)
+              break;
+            }}
+        
+        
     }   
   }
 
