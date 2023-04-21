@@ -16,11 +16,12 @@ export default function Operations (props){
     let lastViewDigitIsParenthesisOpen = stringStateView.endsWith("(")
 
         switch(true){
-            case (stringStateView.length>15):
-                return;
-                break;
+            
             case(input==="-" && props.stateView===0):
                 props.setStateView(input)
+                break;
+            case (stringStateView.length>15):
+                alert("Maximum digits exceeded! =,[")
                 break;
             case(lastViewDigitIsDot===false && props.stateOperated===true && lastViewDigitIsParenthesisOpen===false):
                 if(input==="%"){
@@ -41,7 +42,7 @@ export default function Operations (props){
                 props.setAllowMultipleZeros("abletoinsert")
                 break;
             default:
-                return;
+                console.log("wtf2")
                 break;
             }   
     }

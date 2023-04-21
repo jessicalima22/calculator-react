@@ -16,6 +16,9 @@ export default function Parenthesis (props){
         case(lastViewDigitIsParenthesis === true):
           return;
           break;
+        case (stringStateView.length>15):
+          alert("Maximum digits exceeded! =,[")
+          break;
         case(input==="(" && props.stateView===0):
           props.setStateView(input)
           props.setParenthesesState("abletoinsert)")

@@ -27,7 +27,7 @@ export default function Numbers (props){
                     props.setStateView(0)
                     break;
                 case (stringStateView.length>15):
-                    return;
+                    alert("Maximum digits exceeded! =,[")
                     break;
                 case (props.stateView===0 && input!=="." && input!=="0"):
                     props.setStateView(input)

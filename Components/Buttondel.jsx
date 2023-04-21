@@ -5,7 +5,8 @@ export default function ButtonDel(props) {
     if(props.stateView==0){
       return;
     } else {
-    props.setStateView(props.stateView.substring(0, props.stateView.length-1))}
+    let stateViewString=props.stateView.toString()
+    props.setStateView(stateViewString.slice(0, stateViewString.length-1))}
   }
   return (
     <div>

@@ -33,56 +33,13 @@ export default function Home() {
     if(lastViewDigitIsOperator === true){
       return;
     } else {  
-
       let lineResult = eval(stateView)
-      let stringResult = lineResult.toString()
-      let lastResultDigitIsZero = stringResult.endsWith("0")
-      let numberResult = ""
-      if(Number.isInteger(lineResult)){
+           
         setStateResult(lineResult)
         setStateViewTwo(stateView)
         setStateViewThree(stateViewTwo)
         setStateView(eval(stateView))
-        console.log("numberinteger")
-      } else {
-            switch(true){
-              case(lastResultDigitIsZero=false):
-                    console.log("auqi falso")
-                    numberResult=lineResult.toFixed(10)
-                    setStateResult(numberResult)
-                    setStateViewTwo(stateView)
-                    setStateViewThree(stateViewTwo)
-                    setStateView(numberResult)
-                    break;
-              case(lastResultDigitIsZero=true):
-              console.log("auqi verdadeiro")
-              numberResult=lineResult.toFixed(3)
-              let lastResultDigitContinueZero=0
-              let i=0
-              let newResult=0
-
-              do {
-                newResult= newResult.toString.slice(0, newResult.length - 1)
-                console.log(newResult)
-                
-                
-                lastResultDigitContinueZero = newResult.toString().endsWith("0")
-                i++
-                console.log(i)
-                console.log(lastResultDigitContinueZero)
-
-              } while (i<3)
-
-              
-              setStateResult(newResult)
-              setStateViewTwo(stateView)
-              setStateViewThree(stateViewTwo)
-              setStateView(newResult)
-              break;
-            }}
-        
-        
-    }   
+    }  
   }
 
   useEffect(()=>{
