@@ -1,6 +1,9 @@
-This is a classic calculator, but it's not such a simple project!
+#This is a classic calculator, but it's not such a simple project!
 
-With a maximun of 16 characters, it is made to avoid typos!
+![calculator image](https://github.com/jessicalima22/calculator-react/blob/main/calculator%20image.jpg)
+
+
+Operating with a maximun of 16 characters, it is made to avoid typos!
 
 In order to practice React's functionalities, the components were separated from the main index page, wich made it possible to work lifting up the different states!
 
