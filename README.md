@@ -1,4 +1,4 @@
-#This is a classic calculator, but it's not such a simple project!
+# This is a classic calculator, but it's not such a simple project!
 
 ![calculator image](https://github.com/jessicalima22/calculator-react/blob/main/calculator%20image.jpg)
 
