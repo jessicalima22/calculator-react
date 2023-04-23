@@ -27,12 +27,12 @@ export default function Parenthesis (props){
           props.setStateView(props.stateView+input)
           props.setParenthesesState("abletoinsert)")
           break;
-        case(input===")" && props.parenthesesState==="abletoinsert)" && props.stateOperated===true /*&& containOperation===true*/):
+        case(input===")" && props.parenthesesState==="abletoinsert)" && props.stateOperated===true):
           props.setStateView(props.stateView+input)
           props.setParenthesesState("unabletoinsert)")
           break;
-        case(input===")" && props.parenthesesState==="unabletoinsert)" || input==")" && props.stateOperated===false || input==")" && containOperation===false):
-          return;
+        case(input===")" && props.parenthesesState==="unabletoinsert)" || input==")" && props.stateOperated===false || input==")"):
+          (console.log("caceta"));
           break;
         default:
           return;

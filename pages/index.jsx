@@ -74,7 +74,10 @@ export default function Home() {
            signal=")" />
 
           <ButtonDel signal="Del"
-          stateView={stateView} setStateView={setStateView} />
+          stateView={stateView} setStateView={setStateView} 
+          dotState={dotState} setDotState={setDotState} 
+          allowMultipleZeros={allowMultipleZeros} setAllowMultipleZeros={setAllowMultipleZeros}
+          stateOperated={stateOperated} setStateOperated={setStateOperated}/>
         </div>
         <div className={styles.conteinerNumbers}>
           <Numbers stateViewThree={stateViewThree} setStateViewThree={setStateViewThree} 
