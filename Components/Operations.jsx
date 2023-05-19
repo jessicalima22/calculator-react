@@ -42,7 +42,6 @@ export default function Operations (props){
                 props.setAllowMultipleZeros("abletoinsert")
                 break;
             default:
-                console.log("wtf2")
                 break;
             }   
     }

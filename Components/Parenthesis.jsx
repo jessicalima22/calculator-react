@@ -32,7 +32,7 @@ export default function Parenthesis (props){
           props.setParenthesesState("unabletoinsert)")
           break;
         case(input===")" && props.parenthesesState==="unabletoinsert)" || input==")" && props.stateOperated===false || input==")"):
-          (console.log("caceta"));
+          return;
           break;
         default:
           return;

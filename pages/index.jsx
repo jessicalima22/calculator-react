@@ -77,7 +77,8 @@ export default function Home() {
           stateView={stateView} setStateView={setStateView} 
           dotState={dotState} setDotState={setDotState} 
           allowMultipleZeros={allowMultipleZeros} setAllowMultipleZeros={setAllowMultipleZeros}
-          stateOperated={stateOperated} setStateOperated={setStateOperated}/>
+          stateOperated={stateOperated} setStateOperated={setStateOperated}
+          parenthesesState={parenthesesState} setParenthesesState={setParenthesesState}/>
         </div>
         <div className={styles.conteinerNumbers}>
           <Numbers stateViewThree={stateViewThree} setStateViewThree={setStateViewThree} 
