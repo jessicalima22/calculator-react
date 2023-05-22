@@ -12,3 +12,5 @@ Also, the addition of parentheses increased all the possibilities for error, req
 The percentage function, wich is not present in all simple calculators, has also been added!
 
 The use of switch instead of "if" and "else" also helped with the organization and interpretation of the code, making it possible for other devs to reuse the code and understand the logical steps.
+
+https://calculator-react-roan.vercel.app/
